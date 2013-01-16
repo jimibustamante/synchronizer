@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'execjs'
 gem 'therubyracer'
 gem "mechanize", "~> 2.5.1"
+gem 'activerecord-mysql-adapter'
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.

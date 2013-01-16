@@ -18875,3 +18875,17 @@ NoMethodError (undefined method `to_xml' for #<String:0x00000003455f30>):
   Rendered /home/jimi/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.8ms)
   Rendered /home/jimi/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
   Rendered /home/jimi/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.9ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Calling set_table_name is deprecated. Please use `self.table_name = 'the_name'` instead. (called from <class:Product> at /home/jimi/Sites/synchronizer/app/models/product.rb:3)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from <class:Product> at /home/jimi/Sites/synchronizer/app/models/product.rb:4)
+DEPRECATION WARNING: Calling set_inheritance_column is deprecated. Please use `self.inheritance_column = 'the_name'` instead. (called from <class:Product> at /home/jimi/Sites/synchronizer/app/models/product.rb:5)

@@ -11,6 +11,7 @@ def sync
   url_inventario = 'https://pyme.defontana.com/sistema/inven/LisArticulos.ASP?WCI=wiLisArticulos&WCE=form1&WCU'
   agent = Mechanize.new
   agent.user_agent_alias= 'Windows IE 6'
+
   begin
     page = agent.get(url_main)
     form = page.frame_with(:name => 'main').click.iframe.click.form
@@ -18,7 +19,6 @@ def sync
     form.txtUsuario = 'ddf'
     form.txtPassword = 'dilmanddf'
     agent.submit(form, form.button)
-    # agent.cookie_jar.save_as('cookie.yml')
 
     page = agent.get(url_main_loged)
     page = agent.post(url_inventario)
@@ -26,6 +26,7 @@ def sync
     form = page.form
     page = agent.submit(form, form.button_with(:name => 'I1'))
     logger.debug { "\n\n\n\n\n#{page.content}" }
+    
     # Y tenemos la página donde se muestran TODOS los productos! YEAH!
     @text = "#{@text}\n\n TABLA_PRODUCTOS =>#{page.content.to_xml}"
 
