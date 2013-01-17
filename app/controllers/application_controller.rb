@@ -29,15 +29,16 @@ def sync
     # La paginación mostrada corresponde a i+1.
     # Por ejemplo, para ver la página 4, i=3
     # TODO => Iterar sobre 'i' para leer el contenido de los productos.
-    i=6
-    logger.debug { "TEXTO => #{page.search('html>body>form>table>tbody>tr>td')}" }
-    
-    page = @agent.post(url_inventario,{"DirPag" => "1","NumPag" => i.to_s,"hidUsaCodBarGS1128" => "N","pagSgte" => "Siguiente >>"})
+    page_number = page.search('/html/body/form/table[7]/tr/td[1]').text.to_s.last.to_i
 
-    # form = page.forms.first
-    # @agent.submit(form, form.button_with(:name => 'pagSgte'))
-    # page = @agent.current_page
-    logger.debug { "\n\n\n\n\n#{page.content}" }
+    for i in 0..(page_number - 1)
+      page = @agent.post(url_inventario,{"DirPag" => "1","NumPag" => i.to_s,"hidUsaCodBarGS1128" => "N","pagSgte" => "Siguiente >>"})
+      # Acá se deben leer los productos, tomar su ID y ejecutar método para actualizar datos que se encuentra en el modelo Product
+      logger.debug { "i => #{i}" }
+      logger.debug { "#{page.search('/html/body/form/table[7]/tr/td[4]')}" }
+      logger.debug { "#{page.content}\n\n\n\n" }
+      
+    end
 
     # Y tenemos la página donde se muestran TODOS los productos! YEAH!
     @text = "#{@text}\n\n TABLA_PRODUCTOS =>#{page.content}"
